@@ -7,8 +7,8 @@
 # ignore .txt files
 *.txt
 
-# ignore the git ignore
-# *.gitignore
+# .DS_Store
+.DS_Store
 
 # main object
 main
