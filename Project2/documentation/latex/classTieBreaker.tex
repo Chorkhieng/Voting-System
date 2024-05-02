@@ -1,0 +1,69 @@
+\hypertarget{classTieBreaker}{}\doxysection{Tie\+Breaker Class Reference}
+\label{classTieBreaker}\index{TieBreaker@{TieBreaker}}
+
+
+Resolves ties in election results.  
+
+
+
+
+{\ttfamily \#include $<$Tie\+Breaker.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classTieBreaker_a338d75f0773aeb7e99f86dc488baac3e}\label{classTieBreaker_a338d75f0773aeb7e99f86dc488baac3e}} 
+\mbox{\hyperlink{classTieBreaker_a338d75f0773aeb7e99f86dc488baac3e}{Tie\+Breaker}} ()=default
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classTieBreaker_ace1e267f99d55fd9c9cc54745dabd5df}\label{classTieBreaker_ace1e267f99d55fd9c9cc54745dabd5df}} 
+\mbox{\hyperlink{classTieBreaker_ace1e267f99d55fd9c9cc54745dabd5df}{$\sim$\+Tie\+Breaker}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTieBreaker_aeb8db16b333d173429b785cd8ffb56fa}{break\+Ties}} (int num\+People, int num\+Seats)
+\begin{DoxyCompactList}\small\item\em Breaks ties based on predefined criteria. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classTieBreaker_a5bcf162ed64e8fda01b6041db018b94c}\label{classTieBreaker_a5bcf162ed64e8fda01b6041db018b94c}} 
+std\+::string {\bfseries tie\+Breaker\+Result}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Resolves ties in election results. 
+
+\begin{DoxyPrecond}{Precondition}
+The \mbox{\hyperlink{classTieBreaker}{Tie\+Breaker}} class requires the \mbox{\hyperlink{classCPLSystem}{CPLSystem}} and \mbox{\hyperlink{classOPLSystem}{OPLSystem}} to be initialized and loaded with election data before being utilized.
+\end{DoxyPrecond}
+Implements a mechanism to break ties that occur during the election, ensuring a fair and deterministic outcome. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classTieBreaker_aeb8db16b333d173429b785cd8ffb56fa}\label{classTieBreaker_aeb8db16b333d173429b785cd8ffb56fa}} 
+\index{TieBreaker@{TieBreaker}!breakTies@{breakTies}}
+\index{breakTies@{breakTies}!TieBreaker@{TieBreaker}}
+\doxysubsubsection{\texorpdfstring{breakTies()}{breakTies()}}
+{\footnotesize\ttfamily void Tie\+Breaker\+::break\+Ties (\begin{DoxyParamCaption}\item[{int}]{num\+People,  }\item[{int}]{num\+Seats }\end{DoxyParamCaption})}
+
+
+
+Breaks ties based on predefined criteria. 
+
+\begin{DoxyPrecond}{Precondition}
+The {\ttfamily num\+People} parameter must be greater than 0, and {\ttfamily num\+Seats} must be less than or equal to the number of tied candidates or parties, but greater than 0.
+\end{DoxyPrecond}
+This function simulates a series of randomized selections to determine tiebreakers among candidates. It uses the Mersenne Twister engine (std\+::mt19937) seeded with a non-\/deterministic random device to ensure fair and unpredictable outcomes. The method shuffles candidate indices and assigns seats in each of over 200,000 iterations to simulate many tie-\/breaking scenarios. Candidates with the most wins across these simulations are selected to resolve the tie.
+
+Function was designed so that it can be used in diverse scenarios, where candidates, parties, or both can be tied. This results in less code, and more concise code.
+
+
+\begin{DoxyParams}{Parameters}
+{\em num\+People} & The number of parties/candidates involved in the tie. \\
+\hline
+{\em num\+Seats} & The number of available seats. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/anice002/classes/5801/a/repo-\/\+Team7/\+Project2/src/Tie\+Breaker.\+h\item 
+/home/anice002/classes/5801/a/repo-\/\+Team7/\+Project2/src/Tie\+Breaker.\+cpp\end{DoxyCompactItemize}

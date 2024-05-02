@@ -1,0 +1,176 @@
+\hypertarget{classOPLSystem}{}\doxysection{OPLSystem Class Reference}
+\label{classOPLSystem}\index{OPLSystem@{OPLSystem}}
+
+
+Represents an OPL (Open \mbox{\hyperlink{classParty}{Party}} List) election, where candidates are sorted by popularity within the party.  
+
+
+
+
+{\ttfamily \#include $<$OPLSystem.\+h$>$}
+
+
+
+Inheritance diagram for OPLSystem\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=172pt]{classOPLSystem__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for OPLSystem\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=172pt]{classOPLSystem__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classOPLSystem_ac5f01e96379fd1335836983eec7a5933}{OPLSystem}} (std\+::string filename=\char`\"{}ballot.\+txt\char`\"{})
+\begin{DoxyCompactList}\small\item\em Constructs an \mbox{\hyperlink{classOPLSystem}{OPLSystem}} instance. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classOPLSystem_abc22262904e4abb5eaa359f466477dd5}{$\sim$\+OPLSystem}} () override
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classOPLSystem_a506876f74fbde122ddfc7e91055982eb}\label{classOPLSystem_a506876f74fbde122ddfc7e91055982eb}} 
+void \mbox{\hyperlink{classOPLSystem_a506876f74fbde122ddfc7e91055982eb}{set\+Filename}} (const std\+::string \&new\+Filename)
+\begin{DoxyCompactList}\small\item\em Change the election\textquotesingle{}s file that it will use to count votes. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classOPLSystem_a8420050b76e04eaf57ee2b19d2849296}{process\+Candidates}} () override
+\begin{DoxyCompactList}\small\item\em Builds candidate \& party list. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classOPLSystem_a5e830d632b3323750f4c33453e42c246}{count\+Votes}} () override
+\begin{DoxyCompactList}\small\item\em Counts the votes for the candidate. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classOPLSystem_aa7ca3add77b0757fe1aae9046c6e5d3c}{give\+Votes\+To\+Party}} ()
+\begin{DoxyCompactList}\small\item\em Sums up this \mbox{\hyperlink{classParty}{Party}}\textquotesingle{}s total votes. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classOPLSystem_a191f55e1d11cdd3fd4d0474e1b7bd004}{allocate\+Seats}} () override
+\begin{DoxyCompactList}\small\item\em Allocates seats based on party total votes, and assigns winning candidates based on their popularity within the party. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classOPLSystem_ae622147baa9fd1edf1b958bf4ced635c}{display\+Results}} ()
+\begin{DoxyCompactList}\small\item\em This function builds an election result and a table. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classOPLSystem_aa7a361e7e0e497582d6055f00e66a393}{audit\+Results}} ()
+\begin{DoxyCompactList}\small\item\em This function builds an election result and a table. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Represents an OPL (Open \mbox{\hyperlink{classParty}{Party}} List) election, where candidates are sorted by popularity within the party. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classOPLSystem_ac5f01e96379fd1335836983eec7a5933}\label{classOPLSystem_ac5f01e96379fd1335836983eec7a5933}} 
+\index{OPLSystem@{OPLSystem}!OPLSystem@{OPLSystem}}
+\index{OPLSystem@{OPLSystem}!OPLSystem@{OPLSystem}}
+\doxysubsubsection{\texorpdfstring{OPLSystem()}{OPLSystem()}}
+{\footnotesize\ttfamily OPLSystem\+::\+OPLSystem (\begin{DoxyParamCaption}\item[{std\+::string}]{filename = {\ttfamily \char`\"{}ballot.txt\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Constructs an \mbox{\hyperlink{classOPLSystem}{OPLSystem}} instance. 
+
+Initializes the system with a ballot file taht will be read to build party and candidate vectors and count votes. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em filename} & Name of the ballot file, defaults to \char`\"{}ballot.\+txt\char`\"{}. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classOPLSystem_abc22262904e4abb5eaa359f466477dd5}\label{classOPLSystem_abc22262904e4abb5eaa359f466477dd5}} 
+\index{OPLSystem@{OPLSystem}!````~OPLSystem@{$\sim$OPLSystem}}
+\index{````~OPLSystem@{$\sim$OPLSystem}!OPLSystem@{OPLSystem}}
+\doxysubsubsection{\texorpdfstring{$\sim$OPLSystem()}{~OPLSystem()}}
+{\footnotesize\ttfamily OPLSystem\+::$\sim$\+OPLSystem (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Destructor. 
+
+Cleans up dynamically allocated memory 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classOPLSystem_a191f55e1d11cdd3fd4d0474e1b7bd004}\label{classOPLSystem_a191f55e1d11cdd3fd4d0474e1b7bd004}} 
+\index{OPLSystem@{OPLSystem}!allocateSeats@{allocateSeats}}
+\index{allocateSeats@{allocateSeats}!OPLSystem@{OPLSystem}}
+\doxysubsubsection{\texorpdfstring{allocateSeats()}{allocateSeats()}}
+{\footnotesize\ttfamily void OPLSystem\+::allocate\+Seats (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Allocates seats based on party total votes, and assigns winning candidates based on their popularity within the party. 
+
+Inherits from the abstract Class \mbox{\hyperlink{classElectionSystem}{Election\+System}}, and overrides the method. This function will find the quota to do the first seat allocation. It will then move on to the second seat allocation, where it will see if there are possible ties between the parties. Handling ties will be handled by another class, this function can get the result. After all seats are allocated to the parties, we then have to find the winning candidates within the parties, and handle any ties between candidates of any specific party. To make it easier to provide results, we will move \mbox{\hyperlink{classCandidate}{Candidate}} objects from the \char`\"{}candidates\char`\"{} vector into a vector of winners, \char`\"{}winners\char`\"{}. 
+
+Implements \mbox{\hyperlink{classElectionSystem_a1e5cb35444beb775f688d6a4299c3629}{Election\+System}}.
+
+\mbox{\Hypertarget{classOPLSystem_aa7a361e7e0e497582d6055f00e66a393}\label{classOPLSystem_aa7a361e7e0e497582d6055f00e66a393}} 
+\index{OPLSystem@{OPLSystem}!auditResults@{auditResults}}
+\index{auditResults@{auditResults}!OPLSystem@{OPLSystem}}
+\doxysubsubsection{\texorpdfstring{auditResults()}{auditResults()}}
+{\footnotesize\ttfamily std\+::string OPLSystem\+::audit\+Results (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+This function builds an election result and a table. 
+
+This function will use logic that loops through our winners and candidates vector to build a table of the winners and losers. It will provide important info, like votes won, \% of votes, and so on.
+
+\begin{DoxyReturn}{Returns}
+When called, it will return a string with information like the winners, the losers, votes for the previosuly mentioned and each party, as well as \% of votes won. This string will ultimately be written to an Audit file. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classOPLSystem_a5e830d632b3323750f4c33453e42c246}\label{classOPLSystem_a5e830d632b3323750f4c33453e42c246}} 
+\index{OPLSystem@{OPLSystem}!countVotes@{countVotes}}
+\index{countVotes@{countVotes}!OPLSystem@{OPLSystem}}
+\doxysubsubsection{\texorpdfstring{countVotes()}{countVotes()}}
+{\footnotesize\ttfamily void OPLSystem\+::count\+Votes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Counts the votes for the candidate. 
+
+Inherits from the abstract Class \mbox{\hyperlink{classElectionSystem}{Election\+System}}, and overrides the method. This method will count the votes and assign them to the candidate. 
+
+Implements \mbox{\hyperlink{classElectionSystem_a9c4beb1376853d9d8d60d4dd31cadca0}{Election\+System}}.
+
+\mbox{\Hypertarget{classOPLSystem_ae622147baa9fd1edf1b958bf4ced635c}\label{classOPLSystem_ae622147baa9fd1edf1b958bf4ced635c}} 
+\index{OPLSystem@{OPLSystem}!displayResults@{displayResults}}
+\index{displayResults@{displayResults}!OPLSystem@{OPLSystem}}
+\doxysubsubsection{\texorpdfstring{displayResults()}{displayResults()}}
+{\footnotesize\ttfamily std\+::string OPLSystem\+::display\+Results (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+This function builds an election result and a table. 
+
+This function will use logic that loops through our winners and candidates vector to build a table of the winners and losers. It will provide important info, like votes won, \% of votes, and so on.
+
+\begin{DoxyReturn}{Returns}
+When called, it will return a string with information like the winners, the losers, votes for the previosuly mentioned and each party, as well as \% of votes won. This strign will be printed to the terminal. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classOPLSystem_aa7ca3add77b0757fe1aae9046c6e5d3c}\label{classOPLSystem_aa7ca3add77b0757fe1aae9046c6e5d3c}} 
+\index{OPLSystem@{OPLSystem}!giveVotesToParty@{giveVotesToParty}}
+\index{giveVotesToParty@{giveVotesToParty}!OPLSystem@{OPLSystem}}
+\doxysubsubsection{\texorpdfstring{giveVotesToParty()}{giveVotesToParty()}}
+{\footnotesize\ttfamily void OPLSystem\+::give\+Votes\+To\+Party (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Sums up this \mbox{\hyperlink{classParty}{Party}}\textquotesingle{}s total votes. 
+
+Inherits from the abstract Class \mbox{\hyperlink{classElectionSystem}{Election\+System}}, and overrides the method. Loops through all Candidates, and sums up this \mbox{\hyperlink{classCandidate}{Candidate}}\textquotesingle{}s votes with their \mbox{\hyperlink{classParty}{Party}}\textquotesingle{}s total votes. \mbox{\Hypertarget{classOPLSystem_a8420050b76e04eaf57ee2b19d2849296}\label{classOPLSystem_a8420050b76e04eaf57ee2b19d2849296}} 
+\index{OPLSystem@{OPLSystem}!processCandidates@{processCandidates}}
+\index{processCandidates@{processCandidates}!OPLSystem@{OPLSystem}}
+\doxysubsubsection{\texorpdfstring{processCandidates()}{processCandidates()}}
+{\footnotesize\ttfamily void OPLSystem\+::process\+Candidates (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Builds candidate \& party list. 
+
+Inherits from the abstract Class \mbox{\hyperlink{classElectionSystem}{Election\+System}}, and overrides the method. This method will read the Canidates and their \mbox{\hyperlink{classParty}{Party}}, and make different vaectors and pairs that will be used to hold votes for the \mbox{\hyperlink{classCandidate}{Candidate}} and the \mbox{\hyperlink{classParty}{Party}}. 
+
+Implements \mbox{\hyperlink{classElectionSystem_aa784bd246e47d9a71f948faf32ddf213}{Election\+System}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/anice002/classes/5801/a/repo-\/\+Team7/\+Project2/src/OPLSystem.\+h\item 
+/home/anice002/classes/5801/a/repo-\/\+Team7/\+Project2/src/OPLSystem.\+cpp\end{DoxyCompactItemize}

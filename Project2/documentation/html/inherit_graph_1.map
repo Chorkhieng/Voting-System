@@ -1,0 +1,6 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$classElectionSystem.html" title="Abstract base class for election systems." alt="" coords="5,56,128,83"/>
+<area shape="rect" id="node2" href="$classCPLSystem.html" title="Represents an CPL (Closed Party List) election, where party seats are awarded to candidates in the or..." alt="" coords="179,5,274,32"/>
+<area shape="rect" id="node3" href="$classMPOSystem.html" title="Represents an MPO (Multiple Popularity Only) election, where candidates are sorted by popularity with..." alt="" coords="176,56,277,83"/>
+<area shape="rect" id="node4" href="$classOPLSystem.html" title="Represents an OPL (Open Party List) election, where candidates are sorted by popularity within the pa..." alt="" coords="179,107,275,133"/>
+</map>

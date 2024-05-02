@@ -1,0 +1,176 @@
+\hypertarget{classMPOSystem}{}\doxysection{MPOSystem Class Reference}
+\label{classMPOSystem}\index{MPOSystem@{MPOSystem}}
+
+
+Represents an MPO (Multiple Popularity Only) election, where candidates are sorted by popularity within the party.  
+
+
+
+
+{\ttfamily \#include $<$MPOSystem.\+h$>$}
+
+
+
+Inheritance diagram for MPOSystem\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=172pt]{classMPOSystem__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for MPOSystem\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=172pt]{classMPOSystem__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMPOSystem_a21bc6dd33d60c5dd6f98b803a93d2ee5}{MPOSystem}} (std\+::string filename=\char`\"{}ballot.\+txt\char`\"{})
+\begin{DoxyCompactList}\small\item\em Constructs an \mbox{\hyperlink{classMPOSystem}{MPOSystem}} instance. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classMPOSystem_aa847e663c5f2e2ddd74ad42445b6a13d}{$\sim$\+MPOSystem}} () override
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classMPOSystem_a62c9b3e8dba834d952c6b4efa7a8c151}\label{classMPOSystem_a62c9b3e8dba834d952c6b4efa7a8c151}} 
+void \mbox{\hyperlink{classMPOSystem_a62c9b3e8dba834d952c6b4efa7a8c151}{set\+Filename}} (const std\+::string \&new\+Filename)
+\begin{DoxyCompactList}\small\item\em Change the election\textquotesingle{}s file that it will use to count votes. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classMPOSystem_a640ecc44eba099a1ac0298ec0be653fd}{process\+Candidates}} () override
+\begin{DoxyCompactList}\small\item\em Builds candidate \& party list. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classMPOSystem_a8199def383a4d1811c911d66b3db660a}{count\+Votes}} () override
+\begin{DoxyCompactList}\small\item\em Counts the votes for the candidate. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMPOSystem_a4c0690f5108f8bd4e8f05c272dfa14ee}{give\+Votes\+To\+Party}} ()
+\begin{DoxyCompactList}\small\item\em Sums up this \mbox{\hyperlink{classParty}{Party}}\textquotesingle{}s total votes. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classMPOSystem_ad4ce05e5eb53ca8db9a3da43df94859d}{allocate\+Seats}} () override
+\begin{DoxyCompactList}\small\item\em Allocates seats based on party total votes, and assigns winning candidates based on their popularity within the party. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classMPOSystem_aacd0d8adfea8303faa01be12ec8f886a}{display\+Results}} ()
+\begin{DoxyCompactList}\small\item\em This function builds an election result and a table. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classMPOSystem_a0fdd6cb063ca448c75cb25f267cff901}{audit\+Results}} ()
+\begin{DoxyCompactList}\small\item\em This function builds an election result and a table. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Represents an MPO (Multiple Popularity Only) election, where candidates are sorted by popularity within the party. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classMPOSystem_a21bc6dd33d60c5dd6f98b803a93d2ee5}\label{classMPOSystem_a21bc6dd33d60c5dd6f98b803a93d2ee5}} 
+\index{MPOSystem@{MPOSystem}!MPOSystem@{MPOSystem}}
+\index{MPOSystem@{MPOSystem}!MPOSystem@{MPOSystem}}
+\doxysubsubsection{\texorpdfstring{MPOSystem()}{MPOSystem()}}
+{\footnotesize\ttfamily MPOSystem\+::\+MPOSystem (\begin{DoxyParamCaption}\item[{std\+::string}]{filename = {\ttfamily \char`\"{}ballot.txt\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Constructs an \mbox{\hyperlink{classMPOSystem}{MPOSystem}} instance. 
+
+Initializes the system with a ballot file taht will be read to build party and candidate vectors and count votes. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em filename} & Name of the ballot file, defaults to \char`\"{}ballot.\+txt\char`\"{}. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMPOSystem_aa847e663c5f2e2ddd74ad42445b6a13d}\label{classMPOSystem_aa847e663c5f2e2ddd74ad42445b6a13d}} 
+\index{MPOSystem@{MPOSystem}!````~MPOSystem@{$\sim$MPOSystem}}
+\index{````~MPOSystem@{$\sim$MPOSystem}!MPOSystem@{MPOSystem}}
+\doxysubsubsection{\texorpdfstring{$\sim$MPOSystem()}{~MPOSystem()}}
+{\footnotesize\ttfamily MPOSystem\+::$\sim$\+MPOSystem (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Destructor. 
+
+Cleans up dynamically allocated memory 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classMPOSystem_ad4ce05e5eb53ca8db9a3da43df94859d}\label{classMPOSystem_ad4ce05e5eb53ca8db9a3da43df94859d}} 
+\index{MPOSystem@{MPOSystem}!allocateSeats@{allocateSeats}}
+\index{allocateSeats@{allocateSeats}!MPOSystem@{MPOSystem}}
+\doxysubsubsection{\texorpdfstring{allocateSeats()}{allocateSeats()}}
+{\footnotesize\ttfamily void MPOSystem\+::allocate\+Seats (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Allocates seats based on party total votes, and assigns winning candidates based on their popularity within the party. 
+
+Inherits from the abstract Class \mbox{\hyperlink{classElectionSystem}{Election\+System}}, and overrides the method. This function will find the quota to do the first seat allocation. It will then move on to the second seat allocation, where it will see if there are possible ties between the parties. Handling ties will be handled by another class, this function can get the result. After all seats are allocated to the parties, we then have to find the winning candidates within the parties, and handle any ties between candidates of any specific party. To make it easier to provide results, we will move \mbox{\hyperlink{classCandidate}{Candidate}} objects from the \char`\"{}candidates\char`\"{} vector into a vector of winners, \char`\"{}winners\char`\"{}. 
+
+Implements \mbox{\hyperlink{classElectionSystem_a1e5cb35444beb775f688d6a4299c3629}{Election\+System}}.
+
+\mbox{\Hypertarget{classMPOSystem_a0fdd6cb063ca448c75cb25f267cff901}\label{classMPOSystem_a0fdd6cb063ca448c75cb25f267cff901}} 
+\index{MPOSystem@{MPOSystem}!auditResults@{auditResults}}
+\index{auditResults@{auditResults}!MPOSystem@{MPOSystem}}
+\doxysubsubsection{\texorpdfstring{auditResults()}{auditResults()}}
+{\footnotesize\ttfamily std\+::string MPOSystem\+::audit\+Results (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+This function builds an election result and a table. 
+
+This function will use logic that loops through our winners and candidates vector to build a table of the winners and losers. It will provide important info, like votes won, \% of votes, and so on.
+
+\begin{DoxyReturn}{Returns}
+When called, it will return a string with information like the winners, the losers, votes for the previosuly mentioned and each party, as well as \% of votes won. This string will ultimately be written to an Audit file. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMPOSystem_a8199def383a4d1811c911d66b3db660a}\label{classMPOSystem_a8199def383a4d1811c911d66b3db660a}} 
+\index{MPOSystem@{MPOSystem}!countVotes@{countVotes}}
+\index{countVotes@{countVotes}!MPOSystem@{MPOSystem}}
+\doxysubsubsection{\texorpdfstring{countVotes()}{countVotes()}}
+{\footnotesize\ttfamily void MPOSystem\+::count\+Votes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Counts the votes for the candidate. 
+
+Inherits from the abstract Class \mbox{\hyperlink{classElectionSystem}{Election\+System}}, and overrides the method. This method will count the votes and assign them to the candidate. 
+
+Implements \mbox{\hyperlink{classElectionSystem_a9c4beb1376853d9d8d60d4dd31cadca0}{Election\+System}}.
+
+\mbox{\Hypertarget{classMPOSystem_aacd0d8adfea8303faa01be12ec8f886a}\label{classMPOSystem_aacd0d8adfea8303faa01be12ec8f886a}} 
+\index{MPOSystem@{MPOSystem}!displayResults@{displayResults}}
+\index{displayResults@{displayResults}!MPOSystem@{MPOSystem}}
+\doxysubsubsection{\texorpdfstring{displayResults()}{displayResults()}}
+{\footnotesize\ttfamily std\+::string MPOSystem\+::display\+Results (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+This function builds an election result and a table. 
+
+This function will use logic that loops through our winners and candidates vector to build a table of the winners and losers. It will provide important info, like votes won, \% of votes, and so on.
+
+\begin{DoxyReturn}{Returns}
+When called, it will return a string with information like the winners, the losers, votes for the previosuly mentioned and each party, as well as \% of votes won. This strign will be printed to the terminal. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMPOSystem_a4c0690f5108f8bd4e8f05c272dfa14ee}\label{classMPOSystem_a4c0690f5108f8bd4e8f05c272dfa14ee}} 
+\index{MPOSystem@{MPOSystem}!giveVotesToParty@{giveVotesToParty}}
+\index{giveVotesToParty@{giveVotesToParty}!MPOSystem@{MPOSystem}}
+\doxysubsubsection{\texorpdfstring{giveVotesToParty()}{giveVotesToParty()}}
+{\footnotesize\ttfamily void MPOSystem\+::give\+Votes\+To\+Party (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Sums up this \mbox{\hyperlink{classParty}{Party}}\textquotesingle{}s total votes. 
+
+Inherits from the abstract Class \mbox{\hyperlink{classElectionSystem}{Election\+System}}, and overrides the method. Loops through all Candidates, and sums up this \mbox{\hyperlink{classCandidate}{Candidate}}\textquotesingle{}s votes with their \mbox{\hyperlink{classParty}{Party}}\textquotesingle{}s total votes. \mbox{\Hypertarget{classMPOSystem_a640ecc44eba099a1ac0298ec0be653fd}\label{classMPOSystem_a640ecc44eba099a1ac0298ec0be653fd}} 
+\index{MPOSystem@{MPOSystem}!processCandidates@{processCandidates}}
+\index{processCandidates@{processCandidates}!MPOSystem@{MPOSystem}}
+\doxysubsubsection{\texorpdfstring{processCandidates()}{processCandidates()}}
+{\footnotesize\ttfamily void MPOSystem\+::process\+Candidates (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Builds candidate \& party list. 
+
+Inherits from the abstract Class \mbox{\hyperlink{classElectionSystem}{Election\+System}}, and overrides the method. This method will read the Canidates and their \mbox{\hyperlink{classParty}{Party}}, and make different vaectors and pairs that will be used to hold votes for the \mbox{\hyperlink{classCandidate}{Candidate}} and the \mbox{\hyperlink{classParty}{Party}}. 
+
+Implements \mbox{\hyperlink{classElectionSystem_aa784bd246e47d9a71f948faf32ddf213}{Election\+System}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/anice002/classes/5801/a/repo-\/\+Team7/\+Project2/src/MPOSystem.\+h\item 
+/home/anice002/classes/5801/a/repo-\/\+Team7/\+Project2/src/MPOSystem.\+cpp\end{DoxyCompactItemize}

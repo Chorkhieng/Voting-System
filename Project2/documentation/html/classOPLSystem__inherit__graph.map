@@ -1,0 +1,4 @@
+<map id="OPLSystem" name="OPLSystem">
+<area shape="rect" id="node1" title="Represents an OPL (Open Party List) election, where candidates are sorted by popularity within the pa..." alt="" coords="19,80,115,107"/>
+<area shape="rect" id="node2" href="$classElectionSystem.html" title="Abstract base class for election systems." alt="" coords="5,5,128,32"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="MPOSystem" name="MPOSystem">
+<area shape="rect" id="node1" title="Represents an MPO (Multiple Popularity Only) election, where candidates are sorted by popularity with..." alt="" coords="16,80,117,107"/>
+<area shape="rect" id="node2" href="$classElectionSystem.html" title="Abstract base class for election systems." alt="" coords="5,5,128,32"/>
+</map>
