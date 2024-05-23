@@ -3,8 +3,8 @@ CXXFLAGS = -std=c++11 -Wall
 
 all: main
 
-main: main.o CPLSystem.o Candidate.o ElectionSystem.o OPLSystem.o Party.o Results.o TieBreaker.o MPOSystem.o
-	$(CXX) $(CXXFLAGS) main.o CPLSystem.o Candidate.o ElectionSystem.o OPLSystem.o Party.o Results.o TieBreaker.o -o main MPOSystem.o
+main: main.o CPLSystem.o Candidate.o ElectionSystem.o OPLSystem.o Party.o Results.o TieBreaker.o MPOSystem.o MVSystem.o
+	$(CXX) $(CXXFLAGS) main.o CPLSystem.o Candidate.o ElectionSystem.o OPLSystem.o Party.o Results.o TieBreaker.o -o main MPOSystem.o MVSystem.o
 
 main.o: main.cpp
 	$(CXX) $(CXXFLAGS) -c main.cpp -o main.o
@@ -33,18 +33,21 @@ TieBreaker.o: TieBreaker.cpp TieBreaker.h
 MPOSystem.o: MPOSystem.cpp MPOSystem.h
 	$(CXX) $(CXXFLAGS) -c MPOSystem.cpp -o MPOSystem.o
 
+MVSystem.o: MVSystem.cpp MVSystem.h
+	$(CXX) $(CXXFLAGS) -c MVSystem.cpp -o MVSystem.o
+
 
 # for testing parts
 # run test on Candidate class
 UnitTests:
-	g++ -o UnitTests UnitTests.cpp Candidate.cpp Party.cpp TieBreaker.cpp CPLSystem.cpp OPLSystem.cpp MPOSystem.cpp ElectionSystem.cpp Results.cpp -lgtest -lgtest_main -pthread
+	g++ -o UnitTests UnitTests.cpp Candidate.cpp Party.cpp TieBreaker.cpp CPLSystem.cpp OPLSystem.cpp MPOSystem.cpp MVSystem.cpp ElectionSystem.cpp Results.cpp -lgtest -lgtest_main -pthread
 
 unittest: UnitTests
 	./UnitTests
 
 # run test on Candidate class
 SystemTests:
-	g++ -o SystemTests SystemTests.cpp Candidate.cpp Party.cpp TieBreaker.cpp CPLSystem.cpp OPLSystem.cpp MPOSystem.cpp ElectionSystem.cpp Results.cpp -lgtest -lgtest_main -pthread
+	g++ -o SystemTests SystemTests.cpp Candidate.cpp Party.cpp TieBreaker.cpp CPLSystem.cpp OPLSystem.cpp MPOSystem.cpp MVSystem.cpp ElectionSystem.cpp Results.cpp -lgtest -lgtest_main -pthread
 
 systemtest: SystemTests
 	./SystemTests

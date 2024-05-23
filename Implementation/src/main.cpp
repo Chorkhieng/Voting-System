@@ -7,11 +7,11 @@
 #include "CPLSystem.h"
 #include "OPLSystem.h"
 #include "MPOSystem.h"
+#include "MVSystem.h"
 #include "Party.h"
 #include "Candidate.h"
 #include "ElectionSystem.h"
 #include "Results.h"
-#include "MPOSystem.h"
 
 // #include <format> 
 #include <cstdio>
@@ -26,17 +26,15 @@
 // clear; make run FILES="../testing/m_cpl1.csv ../testing/m_cpl2.csv ../testing/m_cpl3.csv"
 // clear; make run FILES="../testing/m_opl1.csv ../testing/m_opl2.csv ../testing/m_opl3.csv"
 
-
-// clear; make run FILES="../testing/m_mpo1.csv ../testing/m_mpo2.csv ../testing/m_mpo3.csv"
-
-// clear; make run FILES="../testing/m_mpo2.csv ../testing/m_mpo3.csv"
-// clear; make run FILES="../testing/m_mpo1.csv  ../testing/m_mpo3.csv"
-// clear; make run FILES="../testing/m_mpo1.csv ../testing/m_mpo2.csv"
+// clear; make run FILES="../testing/_opl1.csv ../testing/_opl2.csv ../testing/_opl3.csv"
 
 // clear; make unittest
 
 
 // clear; make clean; make run FILES=../testing/_mpo.csv
+
+//  clear; make clean; make run FILES=../testing/_mv.csv
+//  clear; make clean; make run FILES="../testing/m_mv1.csv ../testing/m_mv2.csv ../testing/m_mv3.csv"
 
 
 // Split string based on a delimiter
@@ -225,20 +223,20 @@ int main(int argc, char* argv[]) {
     } else if (electionType == "MV") {
 
       std::cout << "\n coming soon \n";
-      // MVSystem election(filename);
-      // election.setSeats(seats);
-      // election.setCandidates(partiesCandidates);
+      MVSystem election(filename);
+      election.setSeats(seats);
+      election.setCandidates(partiesCandidates);
 
-      // election.processCandidates();
-      // for (const auto& file : successfulFiles) {
-      //   std::cout << file << "\n";
-      //   election.setFilename(file);
-      //   election.countVotes();
-      // }
-      // election.giveVotesToParty();
-      // election.allocateSeats();
-      // displayResult = election.displayResults();
-      // auditResult = election.auditResults();
+      election.processCandidates();
+      for (const auto& file : successfulFiles) {
+        std::cout << file << "\n";
+        election.setFilename(file);
+        election.countVotes();
+      }
+      election.giveVotesToParty();
+      election.allocateSeats();
+      displayResult = election.displayResults();
+      auditResult = election.auditResults();
     }
   } else {
     std::cout << "This type of election is not yet supported.\n";
